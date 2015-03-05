@@ -10,6 +10,7 @@ import static com.jixuan.tij.util.Print.println;
  */
 public class TestPublicScopeInPrivateClass /*extends PublicScopeInPrivateClass*/{
     public static void main(String[] args) {
+
 //        PublicScopeInPrivateClass publicScopeInPrivateClass = new PublicScopeInPrivateClass();
 //        println(PublicScopeInPrivateClass.strStatic);
 //        println(PublicScopeInPrivateClass.getStrStatic());
