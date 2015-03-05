@@ -1,0 +1,11 @@
+.classpath
+out
+lib
+*.log
+*.log.*
+.iml
+classes
+build
+bin
+.settings
+.idea
