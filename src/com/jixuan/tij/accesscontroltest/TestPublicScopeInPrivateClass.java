@@ -1,6 +1,6 @@
-package com.jixuan.tij.accesstest;
+package com.jixuan.tij.accesscontroltest;
 
-//import com.jixuan.tij.access.PublicScopeInPrivateClass;
+//import com.jixuan.tij.accesscontrol.PublicScopeInPrivateClass;
 
 import static com.jixuan.tij.util.Print.println;
 

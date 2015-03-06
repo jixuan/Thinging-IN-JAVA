@@ -1,4 +1,4 @@
-package com.jixuan.tij.access;
+package com.jixuan.tij.accesscontrol;
 
 import static com.jixuan.tij.util.Print.*;
 

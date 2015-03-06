@@ -1,6 +1,6 @@
-package com.jixuan.tij.accesstest;
+package com.jixuan.tij.accesscontroltest;
 
-import com.jixuan.tij.access.ExtendsClassProtected;
+import com.jixuan.tij.accesscontrol.ExtendsClassProtected;
 
 import static com.jixuan.tij.util.Print.println;
 

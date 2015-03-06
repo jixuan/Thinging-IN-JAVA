@@ -1,4 +1,4 @@
-package com.jixuan.tij.access;
+package com.jixuan.tij.accesscontrol;
 
 import java.util.Arrays;
 
