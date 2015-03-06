@@ -12,11 +12,12 @@ public class ReferenceInitialization {
         println(bath);
     }
 }
-
+/*四种初始化引用的地方*/
 class Soap {
     private String s;
 
     public Soap() {
+
         println("I have a soap");
         s = "Constructor s ";
     }
