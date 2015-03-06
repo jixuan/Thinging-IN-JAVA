@@ -2,7 +2,6 @@ package com.jixuan.tij.accesscontroltest;
 
 //import com.jixuan.tij.accesscontrol.PublicScopeInPrivateClass;
 
-import static com.jixuan.tij.util.Print.println;
 
 /**
  * @author jixuan
@@ -10,10 +9,6 @@ import static com.jixuan.tij.util.Print.println;
  */
 public class TestPublicScopeInPrivateClass /*extends PublicScopeInPrivateClass*/{
     public static void main(String[] args) {
-
-//        PublicScopeInPrivateClass publicScopeInPrivateClass = new PublicScopeInPrivateClass();
-//        println(PublicScopeInPrivateClass.strStatic);
-//        println(PublicScopeInPrivateClass.getStrStatic());
-
+//        PublicScopeInPrivateClass.getStrStatic();/*有包访问权限就可以这样用*/
     }
 }
