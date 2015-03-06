@@ -1,4 +1,4 @@
-package com.jixuan.tij.reusingclasses;
+package com.jixuan.tij.mademistakes;
 
 import java.util.Collections;
 import java.util.List;
