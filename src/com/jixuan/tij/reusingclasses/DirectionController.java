@@ -1,4 +1,4 @@
-package com.jixuan.tij.accesscontrol;
+package com.jixuan.tij.reusingclasses;
 
 /**
  * @author jixuan

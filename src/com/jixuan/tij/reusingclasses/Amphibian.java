@@ -1,4 +1,4 @@
-package com.jixuan.tij.accesscontrol;
+package com.jixuan.tij.reusingclasses;
 
 import static com.jixuan.tij.util.Print.println;
 
