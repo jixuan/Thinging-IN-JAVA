@@ -36,5 +36,6 @@ public class ExploreSpaceShip extends SpaceShip {
         ExploreSpaceShip e = new ExploreSpaceShip("Explore");
         e.toUp();
         e.toUp(12);
+        println("num Astronaut : "+e.numAstronaut);
     }
 }

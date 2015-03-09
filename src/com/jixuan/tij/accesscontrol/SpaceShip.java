@@ -9,6 +9,7 @@ import static com.jixuan.tij.util.Print.println;
 public class SpaceShip {
     private DirectionController directionController;
     private String name;
+    protected int numAstronaut=3;
 
     public SpaceShip(String name) {
         this.directionController = new DirectionController("1.1.0");
