@@ -8,10 +8,11 @@ public class TestShap {
     public static void main(String[] args) {
         Shape[] a = new Shape[6];
         ShapGenerator gener = new ShapGenerator();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < a.length; i++) {
             a[i] = gener.getShap();
-            a[i].draw();
-            a[i].erase();
+        }
+        for (Shape item : a) {
+            item.draw();
         }
     }
 
