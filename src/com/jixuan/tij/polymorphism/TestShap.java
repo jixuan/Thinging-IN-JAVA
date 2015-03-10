@@ -13,7 +13,9 @@ public class TestShap {
         }
         for (Shape item : a) {
             item.draw();
+            item.description();
         }
+
     }
 
 }

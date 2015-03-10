@@ -14,4 +14,8 @@ public class Shape {
     void erase() {
         println("Shape erase");
     }
+
+    void description() {
+        println("description shap");
+    }
 }

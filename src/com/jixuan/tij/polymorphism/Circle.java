@@ -16,4 +16,9 @@ public class Circle extends Shape {
     void erase() {
         println("Circle erase");
     }
+
+    @Override
+    void description() {
+        println("Circle description");
+    }
 }
