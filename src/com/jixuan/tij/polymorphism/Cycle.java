@@ -10,13 +10,12 @@ public class Cycle {
     protected int wheelNum;
 
     public void ride(Cycle cycle) {
-        println("ride " + cycle);
+
+        println("ride "+cycle.getClass()+" wheel num = " + cycle.wheel());
     }
 
-    @Override
-    public String toString() {
-        return "Cycle : " +
-                "wheelNum=" + wheelNum +
-                ';';
+    public int wheel() {
+        return this.wheelNum;
     }
+
 }
