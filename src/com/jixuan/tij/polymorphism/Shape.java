@@ -7,6 +7,7 @@ import static com.jixuan.tij.util.Print.println;
  *         Create on 15/3/10.
  */
 public class Shape {
+
     void draw() {
         println("Shape draw");
     }
