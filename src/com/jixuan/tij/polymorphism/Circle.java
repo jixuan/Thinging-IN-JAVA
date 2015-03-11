@@ -22,4 +22,9 @@ public class Circle extends Shape {
     void description() {
         println("Circle description");
     }
+
+    public void uni(){
+        println("~~~~~~~~~~~~~~~ Circle");
+    }
+
 }

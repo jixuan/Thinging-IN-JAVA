@@ -14,9 +14,11 @@ public class TestShap {
         }
         for (Shape item : a) {
             item.draw();
-//            item.description();
+            item.description();
         }
-
+        Shape aaa = new Circle();
+//        aaa.uni();
+//aaa 不能调用Circle自己独特的方法
     }
 
 }
