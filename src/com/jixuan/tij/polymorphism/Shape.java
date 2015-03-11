@@ -18,4 +18,12 @@ public class Shape {
     void description() {
         println("description shap");
     }
+    void callanother(){
+        println(" call ");
+        another();
+    }
+
+    void another() {
+        println(" another");
+    }
 }
