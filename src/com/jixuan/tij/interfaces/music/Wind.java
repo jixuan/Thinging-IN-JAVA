@@ -1,5 +1,6 @@
 package com.jixuan.tij.interfaces.music;
 
+
 import static com.jixuan.tij.util.Print.println;
 
 /**
