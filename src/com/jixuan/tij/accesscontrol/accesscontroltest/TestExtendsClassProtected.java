@@ -1,4 +1,4 @@
-package com.jixuan.tij.accesscontroltest;
+package com.jixuan.tij.accesscontrol.accesscontroltest;
 
 import com.jixuan.tij.accesscontrol.ExtendsClassProtected;
 
