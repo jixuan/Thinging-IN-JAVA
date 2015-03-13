@@ -1,4 +1,6 @@
-package com.jixuan.tij.polymorphism;
+package com.jixuan.tij.polymorphism.shape;
+
+import com.jixuan.tij.polymorphism.shape.Shape;
 
 import static com.jixuan.tij.util.Print.println;
 

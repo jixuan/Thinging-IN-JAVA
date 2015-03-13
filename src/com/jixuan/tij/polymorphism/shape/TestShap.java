@@ -1,4 +1,4 @@
-package com.jixuan.tij.polymorphism;
+package com.jixuan.tij.polymorphism.shape;
 
 /**
  * @author jixuan

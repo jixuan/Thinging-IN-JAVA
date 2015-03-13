@@ -1,6 +1,4 @@
-package com.jixuan.tij.polymorphism;
-
-import com.jixuan.tij.util.Range;
+package com.jixuan.tij.polymorphism.shape;
 
 import java.util.Random;
 
