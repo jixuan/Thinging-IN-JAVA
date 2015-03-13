@@ -6,16 +6,14 @@ import static com.jixuan.tij.util.Print.println;
  * @author jixuan
  *         Create on 15/3/13.
  */
-public class Instrument {
+public class Woodwind extends Wind {
+    @Override
     public void play(Note note) {
-        println(" Instrument.play() " + note);
+        println(" Woodwind.play() " + note);
     }
 
+    @Override
     public void adjust() {
-        println(" adjust Instrument ");
-    }
-
-    public String what() {
-        return "Instrument";
+        println(" adjust Woodwind");
     }
 }

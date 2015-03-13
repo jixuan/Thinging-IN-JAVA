@@ -9,10 +9,14 @@ public class Music {
         i.play(Note.MIDDLE_C);
     }
 
+    public static void tuneAll(Instrument[] a) {
+        for (Instrument item : a) {
+            tune(item);
+        }
+    }
+
     public static void main(String[] args) {
-        Wind flute = new Wind();
-        Stringed violin = new Stringed();
-        tune(flute);
-        tune(violin);
+        Instrument[] ccc = {new Percussion(), new Brass(), new Stringed(), new Wind(), new Woodwind()};
+        tuneAll(ccc);
     }
 }
