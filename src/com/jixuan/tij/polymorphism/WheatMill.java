@@ -6,7 +6,7 @@ package com.jixuan.tij.polymorphism;
  */
 public class WheatMill extends Mill {
     @Override
-    Wheat process() {
-        return new Wheat();
+    Wheat process(Grain grain) {
+        return (Wheat)grain;
     }
 }

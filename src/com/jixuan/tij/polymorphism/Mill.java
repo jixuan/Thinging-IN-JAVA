@@ -5,7 +5,7 @@ package com.jixuan.tij.polymorphism;
  *         Create on 15/3/11.
  */
 public class Mill {
-    Grain process() {
-        return new Grain();
+    Grain process(Grain grain) {
+        return grain;
     }
 }
