@@ -10,8 +10,8 @@ public class CovarianReturn {
     public static void main(String[] args) {
         Mill m = new Mill();
         Mill m2 = new WheatMill();
-        println(m.process());
-        println(m2.process());
+        println(m.process(new Grain()));
+        println(m2.process(new Wheat()));
     }
 }
 /*协变返回类型
