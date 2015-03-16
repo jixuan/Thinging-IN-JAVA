@@ -1,4 +1,6 @@
-package com.jixuan.tij.polymorphism;
+package com.jixuan.tij.polymorphism.covarian;
+
+import com.jixuan.tij.polymorphism.covarian.Grain;
 
 /**
  * @author jixuan
