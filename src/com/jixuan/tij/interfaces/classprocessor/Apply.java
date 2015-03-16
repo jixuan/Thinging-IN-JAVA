@@ -23,33 +23,3 @@ public class Apply {
     }
 }
 
-class Processor {
-    public String name() {
-        return this.getClass().getSimpleName();
-    }
-
-    public Object process(Object object) {
-        return object;
-    }
-}
-
-class Upcase extends Processor {
-    @Override
-    public String process(Object object) {
-        return ((String) object).toUpperCase();
-    }
-}
-
-class LowerCase extends Processor {
-    @Override
-    public Object process(Object object) {
-        return ((String)object).toLowerCase();
-    }
-}
-
-class Splitter extends Processor {
-    @Override
-    public Object process(Object object) {
-        return Arrays.toString(((String) object).split(" "));
-    }
-}
