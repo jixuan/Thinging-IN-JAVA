@@ -7,13 +7,9 @@ import com.jixuan.tij.interfaces.classprocessor.Processor;
  *         Create on 15/3/16.
  */
 public class Filter extends Processor {
-    @Override
-    public String name() {
-        return super.name();
-    }
 
     @Override
-    public Object process(Object object) {
-        return super.process(object);
+    public Waveform process(Object waveform) {
+        return (Waveform)waveform;
     }
 }

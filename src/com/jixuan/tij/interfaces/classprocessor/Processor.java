@@ -1,6 +1,6 @@
 package com.jixuan.tij.interfaces.classprocessor;
 
-public class Processor {
+public abstract class Processor {
     public String name() {
         return this.getClass().getSimpleName();
     }
