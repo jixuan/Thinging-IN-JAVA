@@ -1,4 +1,4 @@
-package com.jixuan.tij.interfaces.classprocessor;
+package com.jixuan.tij.interfaces.filter;
 
 
 import static com.jixuan.tij.util.Print.println;
@@ -14,9 +14,9 @@ public class Apply {
     }
 
     public static void main(String[] args) {
-        String str = "Disagreement with beliefs is by definition incorrect";
-        process(new Upcase(), str);
-        process(new LowerCase(), str);
-        process(new Splitter(), str);
+        Waveform wf = new Waveform();
+        process(new HighPass(3.0),wf);
+        process(new LowPass(1.0),wf);
+        process(new BandPass(4.0,5.0),wf);
     }
 }
