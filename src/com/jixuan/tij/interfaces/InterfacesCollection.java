@@ -1,5 +1,7 @@
 package com.jixuan.tij.interfaces;
 
+import static com.jixuan.tij.util.Print.println;
+
 /**
  * @author jixuan
  *         Create on 15/3/17.
@@ -12,6 +14,29 @@ interface I1 {
     void f();
 }
 
+interface E extends I1,I3{
+
+}
+class EE implements E{
+
+    @Override
+    public void f() {
+
+    }
+
+    @Override
+    public void f(int i) {
+
+    }
+}
+
+class EEE extends EE{
+
+    @Override
+    public void f() {
+        println("aaaaaaaa");
+    }
+}
 interface I2 {
     int f();
 }
