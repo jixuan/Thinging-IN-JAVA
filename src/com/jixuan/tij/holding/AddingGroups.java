@@ -1,4 +1,4 @@
-package com.jixuan.tij.holdingyourobjects;
+package com.jixuan.tij.holding;
 
 import java.util.*;
 
