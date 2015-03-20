@@ -9,6 +9,7 @@ import static com.jixuan.tij.util.Print.println;
  *         Create on 15/3/20.
  */
 public class AddingGroups {
+    /*先构建一个不包含元素的Collection，然后调用Collections.addAll(),这样最快*/
     public static void main(String[] args) {
         Integer[] arr = {1,2,3,4,5,6,7};
         println(arr);
