@@ -1,5 +1,6 @@
 package com.jixuan.tij.innerclass;
 
+import static com.jixuan.tij.util.Print.println;
 import static com.jixuan.tij.util.Print.printnb;
 
 /**
@@ -16,7 +17,7 @@ public class Test {
         Parcel.Distination d = p2.to("Borneo");
     }*/
    public static void main(String[] args) {
-       Sequence sequence = new Sequence(10);
+       Sequence sequence = new Sequence(10,"intSeque");
        for (int i = 0; i < 10; i++) {
            sequence.add(Integer.toString(i));
        }
@@ -25,5 +26,6 @@ public class Test {
            printnb(selector.current() + " ");
            selector.next();
        }
+       println(selector.toString());
    }
 }

@@ -5,11 +5,13 @@ package com.jixuan.tij.innerclass;
  *         Create on 15/3/23.
  */
 public class Sequence {
+    private String name;
     private int next = 0;
     private Object[] items;
 
-    public Sequence(int size) {
+    public Sequence(int size, String name) {
         items = new Object[size];
+        this.name = name;
     }
 
     public void add(Object x) {
@@ -36,6 +38,10 @@ public class Sequence {
         public void next() {
             if (i < items.length) i++;
         }
+
+        public String toString() {
+            return name + " " + this.getClass().getSimpleName();
+        }
     }
 
     public Selector selector() {
@@ -51,4 +57,6 @@ interface Selector {
     Object current();
 
     void next();
+
+    String toString();
 }
