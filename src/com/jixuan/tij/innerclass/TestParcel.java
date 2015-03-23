@@ -1,5 +1,7 @@
 package com.jixuan.tij.innerclass;
 
+import static com.jixuan.tij.util.Print.println;
+
 /**
  * @author jixuan
  *         Create on 15/3/23.
@@ -11,13 +13,20 @@ public class TestParcel {
         Distination d = parcel4.distination("Tasmania");
 //        Parcel4.PContents 这种方式无法访问
         Distination d2 = parcel4.distination2("tomato");
+        parcel4.getInnerClass();
     }
 
 
 }
 
 class Parcel4 {
-
+    public void getInnerClass() {
+        PContents p = new PContents();
+        println(p.getClass().getSimpleName());
+        PDistinatin d = new PDistinatin("asdasdasda");
+        println(d.getClass().getSimpleName());
+//        PDistinatin2 无法接触到方法的内部类
+    }
     private class PContents implements Contents {
         private int i = 11;
 
