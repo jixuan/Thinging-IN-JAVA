@@ -23,6 +23,7 @@ public class Sequence {
 
         @Override
         public boolean end() {
+            /*选择器里可以访问外部类的私有变量*/
             return i == items.length;
         }
 
