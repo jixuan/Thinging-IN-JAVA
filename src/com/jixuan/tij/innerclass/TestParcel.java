@@ -10,6 +10,7 @@ public class TestParcel {
         Contents c = parcel4.contents();
         Distination d = parcel4.distination("Tasmania");
 //        Parcel4.PContents 这种方式无法访问
+        Distination d2 = parcel4.distination2("tomato");
     }
 
 
@@ -46,5 +47,24 @@ class Parcel4 {
     public Distination distination(String s) {
         return new PDistinatin(s);
     }
+
+    public Distination distination2(String s) {
+        /*方法的内部类*/
+        class PDistinatin2 implements Distination {
+
+            private String label;
+
+            private PDistinatin2(String label) {
+                this.label = label;
+            }
+
+            @Override
+            public String readLabel() {
+                return label;
+            }
+        }
+        return new PDistinatin2(s);
+    }
+
 }
 
