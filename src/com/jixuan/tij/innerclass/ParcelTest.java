@@ -14,5 +14,6 @@ public class ParcelTest {
         println(c.value());
         Distination d = p.distination("Yosemite");
         println(d.readLabel());
+        p.tuch();
     }
 }

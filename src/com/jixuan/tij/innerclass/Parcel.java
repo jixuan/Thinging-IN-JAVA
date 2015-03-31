@@ -7,8 +7,9 @@ import static com.jixuan.tij.util.Print.println;
  *         Create on 15/3/23.
  */
 public class Parcel {
+    private int ppnum = 7;
 
-     class PContents implements Contents {
+    class PContents implements Contents {
         private int i = 11;
 
         @Override
@@ -26,6 +27,8 @@ public class Parcel {
 
         @Override
         public String readLabel() {
+//            tuch();就会死循环
+            ppnum++;
             return label;
         }
     }
@@ -36,6 +39,13 @@ public class Parcel {
 
     public Contents contents() {
         return new PContents();
+    }
+
+    public void tuch() {
+        Distination dd = distination("yagami");
+        println(ppnum);
+        dd.readLabel();
+        println(ppnum);
     }
 
 }
