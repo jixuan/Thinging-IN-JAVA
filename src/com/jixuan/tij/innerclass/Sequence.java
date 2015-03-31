@@ -33,8 +33,10 @@ public class Sequence {
                 '}';
     }
 
+    /*这样，某个接口的实现能够完全不可见，且不可用，隐藏了实现的细节*/
     private class SequenceSelector implements Selector {
-        private int cursor=0;//相当于是可以自由移动的游标，用来定位各个元素
+        private int cursor = 0;//相当于是可以自由移动的游标，用来定位各个元素
+
         @Override
         public void next() {
             if (cursor < item.length) {
