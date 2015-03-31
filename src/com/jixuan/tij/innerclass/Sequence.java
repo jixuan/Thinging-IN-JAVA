@@ -1,62 +1,58 @@
 package com.jixuan.tij.innerclass;
 
+import java.util.Arrays;
+
+import static com.jixuan.tij.util.Print.println;
+
 /**
  * @author jixuan
- *         Create on 15/3/23.
+ *         Create on 15/3/31.
  */
 public class Sequence {
-    private String name;
-    private int next = 0;
-    private Object[] items;
+    private Object[] item;
+    private int next = 0;//相当于是永远处在最末尾的游标，用来添加各个元素
 
-    public Sequence(int size, String name) {
-        items = new Object[size];
-        this.name = name;
+    public Sequence(int size) {
+        item = new Object[size];
     }
 
-    public void add(Object x) {
-        if (next < items.length) {
-            items[next++] = x;
+    public void add(Object object) {
+        if (next < item.length) {
+            item[next++] = object;
         }
     }
 
-    private class SequenceSelector implements Selector {
-        private int i = 0;
+    public SequenceSelector sequenceSelector() {
+        return new SequenceSelector();
+    }
 
+    @Override
+    public String toString() {
+        return "Sequence{" +
+                "item=" + Arrays.toString(item) +
+                '}';
+    }
+
+    private class SequenceSelector implements Selector {
+        private int cursor=0;//相当于是可以自由移动的游标，用来定位各个元素
         @Override
-        public boolean end() {
-            /*选择器里可以访问外部类的私有变量*/
-            return i == items.length;
+        public void next() {
+            if (cursor < item.length) {
+                cursor++;
+            }
         }
 
         @Override
         public Object current() {
-            return items[i];
+            return item[cursor];
         }
 
         @Override
-        public void next() {
-            if (i < items.length) i++;
-        }
-
-        public String toString() {
-            return name + " " + this.getClass().getSimpleName();
+        public boolean end() {//这个end不是看数组满没满，是看游标走到最后啦没
+           /* if (next < item.length)
+                return false;
+            else return true;*/
+            return cursor == item.length;
         }
     }
-
-    public Selector selector() {
-        return new SequenceSelector();
-    }
-
-
-}
-
-interface Selector {
-    boolean end();
-
-    Object current();
-
-    void next();
-
-    String toString();
 }

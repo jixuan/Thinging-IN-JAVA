@@ -5,6 +5,7 @@ package com.jixuan.tij.util;
  *         Create on 15/3/5.
  */
 public class Range {
+
     public static int[] range(int n) {
         int[] result = new int[n];
         for (int i = 0; i < n; i++) {
