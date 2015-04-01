@@ -19,9 +19,11 @@ public class Parcel4 {
         };
     }
 
-    /*匿名内部类重写方法*/
+    /*匿名内部类重写方法，wapping被当成公共接口来使用*/
     public Wapping wapping(int x) {
         return new Wapping(x) {
+            /*x 被传递给基类的构造器，在匿名内部类中不被直接使用，所以不用为final*/
+            /*匿名类没有构造器，因为根本没有名字*/
             @Override
             public int value() {
                 return (super.value() * 47);
