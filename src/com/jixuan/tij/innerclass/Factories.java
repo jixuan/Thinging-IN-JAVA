@@ -24,7 +24,7 @@ interface Service {
     void method2();
 }
 
-class Service1 implements Service {
+class ServiceImp1 implements Service {
 
     @Override
     public void method1() {
@@ -37,7 +37,7 @@ class Service1 implements Service {
     }
 }
 
-class Service2 implements Service {
+class ServiceImp2 implements Service {
 
     @Override
     public void method1() {
@@ -64,9 +64,9 @@ class ServiceFactory1 implements ServiceFactory {
     @Override
     public Service getService() {
         if (i == 1) {
-            return new Service1();
+            return new ServiceImp1();
         } else {
-            return new Service2();
+            return new ServiceImp2();
         }
     }
 }
