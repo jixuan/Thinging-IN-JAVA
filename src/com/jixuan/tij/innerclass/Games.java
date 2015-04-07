@@ -6,7 +6,9 @@ import static com.jixuan.tij.util.Print.printnb;
 /**
  * @author jixuan
  *         Create on 15/4/7.
+ *         还是有限使用类，而不是接口
  */
+
 public class Games {
     public static void playGame(GameFactories gameFactories) {
         Game game = gameFactories.getGame();
