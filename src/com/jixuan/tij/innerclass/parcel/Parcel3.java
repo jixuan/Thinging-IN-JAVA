@@ -1,4 +1,4 @@
-package com.jixuan.tij.innerclass;
+package com.jixuan.tij.innerclass.parcel;
 
 import static com.jixuan.tij.util.Print.println;
 

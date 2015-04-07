@@ -1,4 +1,6 @@
-package com.jixuan.tij.innerclass;
+package com.jixuan.tij.innerclass.parcel;
+
+import com.jixuan.tij.innerclass.Wapping;
 
 import static com.jixuan.tij.util.Print.println;
 
