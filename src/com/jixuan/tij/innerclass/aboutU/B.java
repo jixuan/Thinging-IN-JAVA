@@ -7,38 +7,44 @@ import static com.jixuan.tij.util.Print.println;
  *         Create on 15/5/5.
  */
 public class B {
-    private U[] lotsU = new U[10];
+    private U[] lotsU;
     private int i = 0;
 
-
-    public void add(U u) {
-        if (lotsU.length < 100) {
-            lotsU[i] = u;
-            i++;
-        }
+    public B(int size) {
+        this.lotsU = new U[size];
     }
 
-    public void add(U[] uu) {
-        if ((lotsU.length + uu.length) < 100) {
-            for (int j = 0; j < uu.length; j++) {
-                lotsU[i] = uu[j];
-                i++;
+    public boolean add(U elem) {
+        for(int i = 0; i < lotsU.length; i++) {
+            if(lotsU[i] == null) {
+                lotsU[i] = elem;
+                return true;
             }
         }
+        return false; // Couldn't find any space
+    }
+    public boolean setNull(int i) {
+        if(i < 0 || i >= lotsU.length)
+            return false; // Value out of bounds
+        // (Normally throw an exception)
+        lotsU[i] = null;
+        return true;
     }
 
-    public void emptyAll() {
+    public void setNulAll() {
         for (int k = 0; k < lotsU.length; k++) {
             lotsU[k] = null;
         }
     }
 
-    public void getAll() {
+    public void callMethod() {
         for (int k = 0; k < lotsU.length; k++) {
-            println(k + " : ");
-            lotsU[k].method1();
-            lotsU[k].method2();
-            lotsU[k].method3();
+            if (lotsU[k] != null) {
+                println(k + " : ");
+                lotsU[k].method1();
+                lotsU[k].method2();
+                lotsU[k].method3();
+            }
         }
     }
 }

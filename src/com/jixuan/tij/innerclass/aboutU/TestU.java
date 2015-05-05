@@ -7,7 +7,9 @@ import java.util.List;
  * @author jixuan
  *         Create on 15/5/5.
  */
-/****************** Exercise 23 *****************
+
+/**
+ * *************** Exercise 23 *****************
  * Create an interface U with three methods.
  * Create a class A with a method that produces a
  * reference to a U by building an anonymous
@@ -23,17 +25,18 @@ import java.util.List;
  * references produced by the A objects. Use the
  * B to call back into all the A objects. Remove
  * some of the U references from the B.
- ************************************************/
+ * **********************************************
+ */
 public class TestU {
     public static void main(String[] args) {
         List<A> Alist = new ArrayList<A>();
         for (int num = 0; num < 10; num++) {
             Alist.add(new A());
         }
-        B b = new B();
-        for (A aa :Alist)
-        b.add(aa.getU());
-        b.getAll();
+        B b = new B(10);
+        for (A aa : Alist)
+            b.add(aa.getU());
+        b.callMethod();
     }
 
 }
