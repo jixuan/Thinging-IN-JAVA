@@ -26,11 +26,36 @@ public class Sequence {
         return new SequenceSelector();
     }
 
+    public ReverseSelector reverseSelector() {
+        return new ReverseSelector();
+    }
+
     @Override
     public String toString() {
         return "Sequence{" +
                 "item=" + Arrays.toString(item) +
                 '}';
+    }
+
+    private class ReverseSelector implements Selector {
+        private int cursor = item.length-1;
+
+        @Override
+        public void next() {
+            if (cursor >= 0) {
+                cursor--;
+            }
+        }
+
+        @Override
+        public Object current() {
+            return item[cursor];
+        }
+
+        @Override
+        public boolean end() {
+            return cursor < 0;
+        }
     }
 
     /*这样，某个接口的实现能够完全不可见，且不可用，隐藏了实现的细节*/

@@ -14,6 +14,7 @@ public class SequenceTest {
     public static void main(String[] args) {
         Sequence s = new Sequence(3);
         Selector ss = s.sequenceSelector();
+        Selector rs = s.reverseSelector();
         for (int i = 0; i < 3; i++) {
             s.add(Integer.toString(i));
         }
@@ -21,6 +22,10 @@ public class SequenceTest {
         while (!ss.end()) {
             println(ss.current());
             ss.next();
+        }
+        while (!rs.end()) {
+            println(rs.current());
+            rs.next();
         }
     }
 }
