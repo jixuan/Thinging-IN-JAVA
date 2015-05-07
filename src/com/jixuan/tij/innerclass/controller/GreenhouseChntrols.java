@@ -107,6 +107,7 @@ public class GreenhouseChntrols extends Controller {
         }
     }
 
+    //Bell Restart等类，既有Event的所有方法，也有外围类Controller的方法，
     public class Bell extends Event {
 
         protected Bell(long delayTime) {
@@ -129,6 +130,7 @@ public class GreenhouseChntrols extends Controller {
         protected Restart(long delayTime, Event[] evernList) {
             super(delayTime);
             this.evernList = evernList;
+//            将数组加到控制器的时间列表中
             for (Event e : evernList) {
                 addEvent(e);
             }
@@ -144,7 +146,7 @@ public class GreenhouseChntrols extends Controller {
             addEvent(this);
         }
 
-        public String toSting() {
+        public String toString() {
             return "restart System";
         }
     }
