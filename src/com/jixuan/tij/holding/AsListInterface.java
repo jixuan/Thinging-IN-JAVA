@@ -1,9 +1,8 @@
 package com.jixuan.tij.holding;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+
+import static com.jixuan.tij.util.Print.println;
 
 /**
  * @author jixuan
@@ -13,42 +12,63 @@ public class AsListInterface {
     public static void main(String[] args) {
 
         /**如何一个填充List*/
-        List<Snow> snows0 = new ArrayList<Snow>(Arrays.asList(new Power(), new Crusty(), new Slush()));
-        List<Snow> snows1 = Arrays.asList(new Power(), new Crusty(), new Slush());
-        List<Snow> snows2 = Arrays.asList(new Crusty(), new Slush());
-        List<Power> snow3 = Arrays.asList(new Light(), new Heavy());
-//        Collections.addAll(snows1, snow); 必须是参数
-//        Collections.addAll(snows1, snows2);必须是参数
-//        Collections.addAll(snows1, new Crusty());  无法添加和删除
-//        List<Snow> snows = Arrays.asList(new Light(), new Heavy());
-//        Arrays.asList()的方法是根据第一个参数来决定所生成的List的目标类型的Power所以生成的List<Power>
-        List<Snow> snows = Arrays.<Snow>asList(new Light(), new Heavy());
-//      告诉编译器产生的List的类型，实际的目标应该是什么，这称为显示类型参数说明
-        snows0.add(new Power());
-//        snows1.add(new Power());无法添加
+        List<Snow> s1 = Arrays.asList(new Power(), new Crusty(), new Slush());
+//        s1.add(new Snow());s1是固定大小的数组，不可添加
+        println("s1 : " + s1);
+        List<Snow> s2 = new ArrayList<Snow>(Arrays.asList(new Snow(), new Light()));
+        s2.add(new Heavy());//这种方式就可以产生可变的数组，一般这么用
+        println("s2 : " + s2);
+//        List<Snow> s3 = Arrays.asList(new Light(),new Heavy());Arrays.asList这种方式会将两个参数识别成List<Power>
+        List<Snow> s33 = Arrays.<Snow>asList(new Light(), new Heavy());//可以像这样，显示类型参数说明
+        println("s33 : "+s33);
+        List<Power> s3 = Arrays.asList(new Light(), new Heavy());//或者直接声明称Power
+        println("s3 : "+s3);
+        //Collection.addAll 和Collections.addAll 就不会搞错,应为它从第一个参数中了解到参数类型是什么
+        List<Snow> cc = new ArrayList<Snow>();
+        cc.addAll(Arrays.asList(new Light(), new Heavy()));
+        println("cc : "+cc);
+        Collections.addAll(cc, new Light(), new Heavy());
+        println("cc : "+cc);
     }
 }
 
 class Snow {
-
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
 
 class Power extends Snow {
-
-}
-
-class Light extends Power {
-
-}
-
-class Heavy extends Power {
-
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
 
 class Crusty extends Snow {
-
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
 
 class Slush extends Snow {
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
+}
+class Light extends Power {
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
+}
 
+class Heavy extends Power {
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

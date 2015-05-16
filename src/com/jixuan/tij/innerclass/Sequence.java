@@ -56,6 +56,7 @@ public class Sequence {
         public boolean end() {
             return cursor < 0;
         }
+
     }
 
     /*这样，某个接口的实现能够完全不可见，且不可用，隐藏了实现的细节*/

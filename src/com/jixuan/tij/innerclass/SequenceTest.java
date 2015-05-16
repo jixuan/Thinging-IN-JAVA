@@ -12,12 +12,15 @@ import static com.jixuan.tij.util.Print.printnb;
 public class SequenceTest {
 
     public static void main(String[] args) {
-        Sequence s = new Sequence(3);
+        Sequence s = new Sequence(6);
         Selector ss = s.sequenceSelector();
         Selector rs = s.reverseSelector();
         for (int i = 0; i < 3; i++) {
             s.add(Integer.toString(i));
         }
+        s.add("aaaaaaaaaa");
+        s.add("bbbbbbbbbb");
+        s.add("cccccccccc");
         println(s);
         while (!ss.end()) {
             println(ss.current());
