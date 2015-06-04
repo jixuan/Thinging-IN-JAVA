@@ -153,7 +153,7 @@ public class MyArrayList extends AbstractList implements List, RandomAccess, Clo
         return false;
     }
 
-    public E remove(int index) {
+    public <E> remove(int index) {
         RangeCheck(index);
         modCount++;
         E oldValue = (E) elementData[index];
@@ -216,7 +216,6 @@ public class MyArrayList extends AbstractList implements List, RandomAccess, Clo
         return numNew != 0;
     }
 
-    //Todo 删除fromIndex到toIndex之间的全部元素。
     protected void removeRange(int fromIndex, int toIndex) {
         modCount++;
         int numMoved = size - toIndex;
@@ -226,6 +225,54 @@ public class MyArrayList extends AbstractList implements List, RandomAccess, Clo
             elementData[--size] = null;
         }
     }
+    public Object clone() {
+        try {
+            MyArrayList<E> v = (MyArrayList<E>) super.clone();
+            // 将当前ArrayList的全部元素拷贝到v中
+            v.elementData = Arrays.copyOf(elementData, size);
+            v.modCount = 0;
+            return v;
+        } catch (CloneNotSupportedException e) {
+            // this shouldn't happen, since we are Cloneable
+            throw new InternalError();
+        }
+    }
+    // java.io.Serializable的写入函数
+    // 将ArrayList的“容量，所有的元素值”都写入到输出流中
+    private void writeObject(java.io.ObjectOutputStream s)
+            throws java.io.IOException{
+        // Write out element count, and any hidden stuff
+        int expectedModCount = modCount;
+        s.defaultWriteObject();
 
+        // 写入“数组的容量”
+        s.writeInt(elementData.length);
+
+        // 写入“数组的每一个元素”
+        for (int i=0; i<size; i++)
+            s.writeObject(elementData[i]);
+
+        if (modCount != expectedModCount) {
+            throw new ConcurrentModificationException();
+        }
+
+    }
+
+
+    // java.io.Serializable的读取函数：根据写入方式读出
+    // 先将ArrayList的“容量”读出，然后将“所有的元素值”读出
+    private void readObject(java.io.ObjectInputStream s)
+            throws java.io.IOException, ClassNotFoundException {
+        // Read in size, and any hidden stuff
+        s.defaultReadObject();
+
+        // 从输入流中读取ArrayList的“容量”
+        int arrayLength = s.readInt();
+        Object[] a = elementData = new Object[arrayLength];
+
+        // 从输入流中将“所有的元素值”读出
+        for (int i=0; i<size; i++)
+            a[i] = s.readObject();
+    }
 
 }
