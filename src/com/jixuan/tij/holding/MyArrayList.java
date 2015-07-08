@@ -1,11 +1,14 @@
+/*
 package com.jixuan.tij.holding;
 
 import java.util.*;
 
+*/
 /**
  * @author jixuan
  *         Create on 15/5/16.
- */
+ *//*
+
 public class MyArrayList extends AbstractList implements List, RandomAccess, Cloneable, java.io.Serializable {
     private int size;
     private transient Object[] elementData;
@@ -153,10 +156,10 @@ public class MyArrayList extends AbstractList implements List, RandomAccess, Clo
         return false;
     }
 
-    public <E> remove(int index) {
+    public Object remove(int index) {
         RangeCheck(index);
         modCount++;
-        E oldValue = (E) elementData[index];
+        Object oldValue = (Object) elementData[index];
         int numMoved = size - index - 1;
         if (numMoved > 0) {
             System.arraycopy(elementData, index + 1, elementData, index, numMoved);
@@ -276,3 +279,4 @@ public class MyArrayList extends AbstractList implements List, RandomAccess, Clo
     }
 
 }
+*/
